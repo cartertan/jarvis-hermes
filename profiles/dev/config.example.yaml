@@ -1,0 +1,8 @@
+# Optional: Codex as an MCP tool for the dev profile (Phase 4B, Pattern 2).
+# Simplest way to add it: `hermes -p dev mcp add codex --preset codex`
+# The equivalent config.yaml block is shown for reference.
+
+mcp_servers:
+  codex:
+    command: "codex"
+    args: ["mcp-server"]

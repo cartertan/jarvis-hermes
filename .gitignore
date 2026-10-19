@@ -1,0 +1,49 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+mcp-tokens/
+
+# Live Hermes data: never commit
+.hermes/
+hermes-home/
+*.db
+*.db-wal
+*.db-shm
+sessions/
+logs/
+*.log
+memories/
+MEMORY.md
+USER.md
+
+# Live vault content: only vault-template/ is tracked
+JarvisVault/
+/Imported/
+exports/
+
+# Customer / work material: never in this repo
+restricted/
+customer*/
+*.pptx
+*.docx
+*.xlsx
+*.pdf
+
+# Obsidian workspace state
+.obsidian/workspace*
+.trash/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/

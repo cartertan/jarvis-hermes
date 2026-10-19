@@ -1,0 +1,9 @@
+# Example MCP block for the coach profile's config.yaml.
+# Merge into the existing file created by `hermes profile create coach`; do not replace it.
+# Copy command/args from your working Claude Desktop Garmin MCP entry.
+# Credentials go in the profile's .env file, never here.
+
+mcp_servers:
+  garmin:
+    command: "uvx"
+    args: ["<garmin-mcp-package-and-args-from-your-claude-config>"]
