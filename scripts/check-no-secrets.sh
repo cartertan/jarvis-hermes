@@ -12,9 +12,9 @@ fail=0
 
 echo "1/3 gitleaks"
 if command -v gitleaks >/dev/null 2>&1; then
-  gitleaks detect --source . --no-git --redact -q || fail=1
+  gitleaks detect --source . --no-git --redact --no-banner --log-level warn || fail=1
   if [[ "${1:-}" == "--history" ]]; then
-    gitleaks detect --source . --redact -q || fail=1
+    gitleaks detect --source . --redact --no-banner --log-level warn || fail=1
   fi
 else
   echo "  gitleaks not installed (brew install gitleaks); skipping"
@@ -31,7 +31,7 @@ fi
 echo "3/3 blocked terms"
 terms_file="$HOME/.config/jarvis-hermes/blocked-terms.txt"
 if [[ -f "$terms_file" ]]; then
-  if grep -rniF --exclude-dir=.git -f "$terms_file" . ; then
+  if grep -rniwF --exclude-dir=.git -f "$terms_file" . ; then
     echo "  FAIL: blocked term found above"; fail=1
   else
     echo "  ok"
